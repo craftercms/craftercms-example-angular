@@ -9,10 +9,10 @@ import { map, switchMap } from 'rxjs';
 
 export function getModel(path = '/site/website/index.xml') {
   return getDescriptor(path, { flatten: true }).pipe(
-    map((descriptor: (DescriptorResponse | DescriptorResponse[])) => parseDescriptor(descriptor))
+    map((descriptor: DescriptorResponse | DescriptorResponse[]) => parseDescriptor(descriptor))
     // Can use this for debugging purposes.
     // tap(console.log)
-  )
+  );
 }
 
 export function getModelByUrl(webUrl = '/') {
