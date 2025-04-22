@@ -18,7 +18,9 @@ export class AppComponent {
     crafterConf.configure({
       baseUrl: environment.PUBLIC_CRAFTERCMS_HOST_NAME ?? '',
       site: environment.PUBLIC_CRAFTERCMS_SITE_NAME ?? '',
-      cors: true,
+      fetchConfig: {
+        mode: 'cors',
+      }
     });
 
     getNav().subscribe(navItems => {
